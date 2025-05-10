@@ -1,0 +1,372 @@
+
+<!DOCTYPE html><!--
+scripts and programs that download content transparent to the user are not allowed without permission
+--><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=utf-8"><title>Weather Around The World &mdash; Search Results</title><meta name=description content="Weather forecast &amp; current weather worldwide in Fahrenheit or Celsius - hour-by-hour &amp; 2 week forecast plus last week's weather."><meta name=robots content="max-image-preview:large"><meta property="og:image" content="https://www.timeanddate.com/scripts/weather_og.php?h1=Weather"><meta property="og:image:width" content=1200><meta property="og:image:height" content=630><meta property="og:type" content=website><style>
+@font-face{font-family:iconfont;src:url("/common/fonts/iconfont.woff2?v8") format("woff2"),url("/common/fonts/iconfont.woff?v8") format("woff"),url("/common/fonts/iconfont.ttf?v8") format("truetype"),url("/common/fonts/iconfont.svg?v8#iconfont") format("svg");font-weight:400;font-style:normal}
+</style>
+
+<link rel=preload href="/common/fonts/iconfont.woff2?v8" as=font type="font/woff2" crossorigin>
+<link rel=preconnect href="https://c.tadst.com" crossorigin>
+<link rel=preload href="//c.tadst.com/com/common/global_44.css" as=style>
+<link rel=preload href="/common/prebidtad.reg.desk_87.js" as=script>
+<script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+<script src="https://c.amazon-adsystem.com/aax2/apstag.js" async></script>
+<script src="https://btloader.com/tag?o=5174239513018368&upapi=true" async></script>
+<script>
+
+AdMgr=(function(){var isLog=0,isSent=0,slots=[],slotsR=[],techs={"pb":1,"aps":1},isResent=0,techsR={"pb":1,"aps":1},vals={"gdpr":"na"};
+function isSecond(){return(document.referrer||'').indexOf('timeanddate')>0}
+function logAds(){if(isLog){return}
+if(!window.jcb||!window.TADhba){setTimeout(logAds,1000);
+return}
+isLog=1;
+jcb("/scripts/logads.php?d=d"+"&"+TADhba(),function(){})}
+AD={s:[],o:0};
+googletag=window.googletag||{};
+googletag.cmd=googletag.cmd||[];
+function push(f){googletag.cmd.push(f)}
+function set(n,v){vals[n]=v}
+function get(n){return vals[n]}
+function setTargeting(n,v){if(v){push(function(){googletag.pubads().setTargeting(n,v)})}}
+function send(){if(isSent)return;
+isSent=true;
+setTargeting("pbv",window.pbv);
+setTargeting("si",isSecond()?"2":"1");
+setTargeting("gdpr",get("gdpr"));
+push(function(){googletag.enableServices();
+googletag.pubads().refresh(AD.s)})}
+function resend(){if(isResent)return;
+isResent=true;
+let o=slotsR[0];
+o.S.setTargeting('rot',''+o.r);
+googletag.pubads().refresh([o.S])}
+function rendered(g){setTimeout(logAds,1000)}
+function bidsIn(i){delete techs[i];
+if(Object.keys(techs).length==0){sendAdserverRequest()}}
+function bidsInR(i){delete techsR[i];
+if(Object.keys(techsR).length==0){resend()}}
+function addSlot(o){if (o.wm&&o.wm>window.innerWidth){o.wf.i=o.i;
+o=o.wf}
+o.r=0;
+o.a9=function(){return{slotID:o.i,slotName:o.n,sizes:o.s}}
+slots.push(o);
+if(o.css){let s=document.createElement('style');
+s.textContent=o.css;
+document.head.append(s)}}
+function refresh(o){if (o.r<3 && AdMgr.highBid){o.r++;
+slotsR=[o];
+setTimeout(resend,3000);
+pbjs.requestBids({timeout:2300,
+adUnitCodes:[o.n],
+bidsBackHandler:function(){try{pbjs.setTargetingForGPTAsync([o.n])}catch(e){}
+AdMgr.bidsInR('pb')}});
+TADaps.t=+new Date();apstag.fetchBids({slots:[o.a9()],timeout:2000,params:{adRefresh:'1'}},
+function(bids){AdMgr.push(function(){TADaps.b=[];
+TADaps.e=+new Date();
+apstag.setDisplayBids();
+AD.s.forEach(function(o){let c=0,z=o.getTargeting('amznbid');
+if(z&&z.length>0){c=z[0]}
+TADaps.b.push(c)});
+AdMgr.bidsInR('aps')})})}}
+function slot(i){return slots[i]}
+function a9slot(i){return slot(i).a9()}
+function gptSlot(i){let o=slot(i),j;
+if(o){o.S=googletag.defineSlot(o.n,o.s,o.i);
+if(o.t){for(j=0;j<o.t.length;j++){t=o.t[j];
+o.S.setTargeting(t[0],t[1])}}
+o.S.addService(googletag.pubads());
+AD.s.push(o.S);
+if (o.ro){let e=document.getElementById(o.i);
+if(e){addEventListener("impressionViewableRotate",function(){refresh(o)}, true)}}}}
+function dispSlot(i){let o=slot(i);
+push(function(){googletag.display(o.i)})}
+push(function(){googletag.pubads().disableInitialLoad();
+googletag.pubads().addEventListener('slotRenderEnded',rendered);
+googletag.pubads().setPublisherProvidedId('0da1e2f56d6b8543d840d4efced56227')});
+return {addSlot:addSlot,
+slot:slot,
+a9slot:a9slot,
+gptSlot:gptSlot,
+dispSlot:dispSlot,
+bidsIn:bidsIn,
+bidsInR:bidsInR,
+push:push,
+setTargeting:setTargeting,
+send:send,
+set:set,
+get:get,
+rendered:rendered,
+isSecond:isSecond,
+done:function(){return isLog}}})();
+AdMgr.addSlot({n:'/1004254/tadcom_970',s:[[970,90],[728,90]],i:'div-gpt-com-970x90-head',t:[['pf','050']],wm:1320,wf:{n:'/1004254/com728',s:[[728,90]],i:'div-gpt-com-728x90-head'}});AdMgr.addSlot({n:'/1004254/com_300',s:[[300,250]],i:'div-gpt-com-300x250',t:[['pf','033']]});
+var pbjs=pbjs||{};pbjs.que=pbjs.que||[];
+pbjs.bidderSettings={standard:{storageAllowed:true}};
+!function(a9,a,p){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]}}("apstag",window,document);
+function cmpEvent(t,s){if(s){let e=t.eventStatus;
+if(e=='useractioncomplete'||e=='tcloaded'){if (!t.purpose.consents[1]){AdMgr.set('p1',1);
+AdMgr.set("gdpr","rej")} else {AdMgr.set("gdpr","acc")}
+consentDataReady();
+/*
+if (t.purpose.consents[4]){consentDataReady()} else {sendAdserverRequest()}
+*/}}}
+function consentDataReady(){consentDataReady=function(){};
+pbjs.que.push(function(){if(AdMgr.get('p1')){pbjs.setConfig({'deviceAccess':false})}
+pbjs.addAdUnits([{code:AdMgr.slot(0).n,mediaTypes:{banner:{sizes:AdMgr.slot(0).s}},ortb2Imp:{ext:{gpid:'/1004254/tadcom_970#a3515'}},bids:[{bidder:'amx',params:{tagId:'dGltZWFuZGRhdGUuY29t'}},{bidder:'appnexus',params:{placementId:28369066}},{bidder:'insticator',params:{adUnitId:'01JJ7HSPFMMBNCBWJSDQYYPEMA',publisherId:'be9f3fb2-3a4a-468e-9dd8-1e941423d85b'}},{bidder:'medianet',params:{cid:'8CU692DPW',crid:'635764783'}},{bidder:'minutemedia',params:{org:'01h7zfmy49py',placementId:'970x90'}},{bidder:'oms',params:{publisherId:20895}},{bidder:'onetag',params:{pubId:'7b5d361d6af8a75'}},{bidder:'pubmatic',params:{adSlot:'4851008',publisherId:'157610'}},{bidder:'rise',params:{org:'6516aab5dd00540001482f61'}},{bidder:'rubicon',params:{accountId:'16448',siteId:'127484',zoneId:'2677290'}},{bidder:'sharethrough',params:{pkey:'MP4upq7RPYEkCaVYtECVCddt'}},{bidder:'shemedia',params:{accountId:'10278',siteId:'210096',zoneId:'2831480'}},{bidder:'sovrn',params:{tagid:'422101'}}]},{code:AdMgr.slot(1).n,mediaTypes:{banner:{sizes:AdMgr.slot(1).s}},ortb2Imp:{ext:{gpid:'/1004254/com_300#a3515'}},bids:[{bidder:'amx',params:{tagId:'dGltZWFuZGRhdGUuY29t'}},{bidder:'appnexus',params:{placementId:11439174}},{bidder:'insticator',params:{adUnitId:'01JJ7HSPFMMBNCBWJSDQYYPEMA',publisherId:'be9f3fb2-3a4a-468e-9dd8-1e941423d85b'}},{bidder:'medianet',params:{cid:'8CU692DPW',crid:'558762728'}},{bidder:'minutemedia',params:{org:'01h7zfmy49py',placementId:'300x250'}},{bidder:'oms',params:{publisherId:20895}},{bidder:'onetag',params:{pubId:'7b5d361d6af8a75'}},{bidder:'pubmatic',params:{adSlot:'com_300@300x250',publisherId:'157610'}},{bidder:'rise',params:{org:'6516aab5dd00540001482f61'}},{bidder:'rubicon',params:{accountId:'16448',siteId:'127484',zoneId:'601640'}},{bidder:'sharethrough',params:{pkey:'mkmYPUa69TWGEoAtGZXwATtZ'}},{bidder:'shemedia',params:{accountId:'10278',siteId:'210096',zoneId:'2831480'}},{bidder:'sovrn',params:{tagid:'422098'}}]}]);
+pbjs.requestBids({bidsBackHandler:function(){var c=0,a,b,i,h=0,r=pbjs.getBidResponses();
+AdMgr.push(function(){pbjs.setTargetingForGPTAsync()});
+for(a in r){if(r.hasOwnProperty(a)){b=r[a].bids;
+for(i=0;i<b.length;i++){if(b[i].cpm){c++;
+h=Math.max(h,b[i].cpm)}}}}
+AdMgr.setTargeting("tadbid",""+c);
+AdMgr.highBid=h;
+AdMgr.bidsIn('pb')}}
+)});
+TADaps.t=+new Date();apstag.fetchBids({slots:[AdMgr.a9slot(0),AdMgr.a9slot(1)],timeout:1933,params:{adRefresh:'0'}},
+function(bids){AdMgr.push(function(){TADaps.e=+new Date();
+apstag.setDisplayBids();
+AD.s.forEach(function(o){let c=0,z=o.getTargeting('amznbid');
+if(z&&z.length>0){c=z[0]}
+TADaps.b.push(c)});
+AdMgr.bidsIn('aps')})})}
+pbjs.que.push(function(){pbjs.setConfig({s2sConfig:{accountId:'1',
+bidders:["amx","appnexus","minutemedia","rubicon","shemedia","onetag"],
+adapter:'prebidServer',
+enabled:true,
+endpoint:{p1Consent:'https://www.timeanddate.com/.pbs/v1/openrtb2/auction',
+noP1Consent:'https://www.timeanddate.com/.pbs/v1/openrtb2/auction'},
+syncEndpoint:{p1Consent:'https://www.timeanddate.com/.pbs/v1/cookie_sync',
+noP1Consent:'https://www.timeanddate.com/.pbs/v1/cookie_sync'},
+timeout:1224},
+userSync:{userIds:[{name:"quantcastId"},{name:"criteo"},{name:"sharedId",params:{pixelUrl:"/scripts/sharedid.php"},storage:{name:"_sharedID",type:"cookie",expires:30}}],filterSettings:{iframe:{bidders:"*",filter:"include"}}},
+floors:{enforcement:{enforceJS:false},data:{schema:{fields:['size']},values:{'970x90':0.5,'300x250':0.33},default:0.5}},
+priceGranularity:{buckets:[{min:0,max:4,increment:0.01},{min:4,max:8,increment:0.02},{min:8,max:20,increment:0.05},{min:20,max:30,increment:0.10},{min:30,max:50,increment:0.25},{min:50,max:100,increment:1}]},
+enableSendAllBids:true,
+bidderTimeout:1633,
+pageUrl:"https:\/\/www.timeanddate.com\/weather\/?query=virginia+beach%2C+va%2C+usa"});
+pbjs.aliasBidder('insticator','insticator');
+pbjs.aliasBidder('rubicon','shemedia');
+pbjs.setBidderConfig({"bidders":["rubicon"],"config":{"schain":{"validation":"strict","config":{"ver":"1.0","complete":1,"nodes":[{"asi":"netricsales.com","sid":"16448","hp":1}]}}}}, true);
+consentDataReady()});
+TADaps={b:[]};apstag.init({pubID:'12d5d789-63e3-47bc-ba31-070e97a96f2c',adServer:'googletag'});
+function sendAdserverRequest(){AdMgr.send()}
+setTimeout(function(){sendAdserverRequest()},3266);
+googletag.cmd.push(function(){AdMgr.gptSlot(0);AdMgr.gptSlot(1);googletag.pubads().setTargeting('ab','a').setTargeting('hr','01').setTargeting('ut','d0').setTargeting('art','3515').setTargeting('pf','052').enableSingleRequest()});
+
+</script>
+<script src="/common/prebidtad.reg.desk_87.js" async></script><link href="/site.webmanifest" rel=manifest><link href="//c.tadst.com/favicon-48x48.png" sizes=48x48 rel=icon type="image/png"><link type="image/png" rel=icon sizes=16x16 href="//c.tadst.com/favicon-16x16.png"><link rel=icon type="image/png" href="//c.tadst.com/favicon-32x32.png" sizes=32x32><link href="//c.tadst.com/com/common/global_44.css" rel=stylesheet type="text/css"><script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Weather","item":"https://www.timeanddate.com/weather/"}]}
+</script><link href="//c.tadst.com/com/common/worldclock_lists_18.css" rel=stylesheet type="text/css"><style>
+.bn-header--weather{
+background:#008F8F url(//c.tadst.com/gfx/n/citybg-map.png) 50% 5% no-repeat;
+background-attachment: fixed;
+}
+#ad-wrap{background:#008F8F}
+.my-city__abbr{
+display:none;
+}
+.my-city__more {
+z-index: 100;
+top: 0;
+}
+@media only screen and (max-width: 50em) {
+.my-city__more {
+display: none;
+}
+}
+</style></head><body class="tpl-fluid "><div id=header__wrapper class=header__wrapper>
+<div id=header__inner class=header__inner>
+<div id=header class=banner>
+<div class=fixed>
+<div id=logo>
+<a href="/" rel=home title="Home page timeanddate.com"><div class="tad-logo" role="img" aria-label="timeanddate.com"></div></a>
+</div>
+</div>
+</div>
+<div id=ad-wrap><div id=ad-wrap2 class=fixed><div id=ad7><div id='div-gpt-com-970x90-head'><script>
+AdMgr.dispSlot(0);
+</script>
+</div></div></div></div>
+<nav id=nav class=site-nav-bar>
+<div class="site-nav-bar__inner fixed">
+<button class="site-nav-bar__button site-nav-bar__button--menu" id=site-nav-menu title="Menu" aria-label="Menu">
+<i class="i-font i-menu"></i>
+</button>
+<div class=site-nav-bar__logo>
+<a href="/" rel=home title="Home page timeanddate.com"><img src="//c.tadst.com/gfx/n/logo/logo-2021--horizontal-inverted-darkbg.svg" loading=lazy alt="timeanddate.com" width=140 height=19></a>
+</div>
+<form action="/search/results.html" class=site-nav-bar__search-form>
+<input class=site-nav-bar__search placeholder="Search..." id=site-nav-search name=query title="Search" aria-label="Search"/>
+<button class="site-nav-bar__button site-nav-bar__button--search" id=site-nav-search-btn aria-label="Search">
+<div class=site-nav-bar__search-inner>
+<i class="i-font i-search"></i>
+</div>
+</button>
+</form>
+<div class=site-nav-bar__menu-wrap>
+<div class=site-nav__header>
+<button class=site-nav__login id=site-nav-login>Sign in</button>
+<button class=site-nav__close id=site-nav-close title="Close">
+<i class="i-font i-close"></i>
+</button>
+</div>
+<ul id=site-nav class=site-nav>
+<li class="site-nav__menu "><a href="/news/" class=site-nav__title>News</a><ul class=site-nav__sub-menu><li class="site-nav__item site-nav__item--divider site-nav__item--mob"><a class=site-nav__link href="/news">News Home</a><li class=site-nav__item><a class=site-nav__link href="/news/astronomy/">Astronomy News</a><li class=site-nav__item><a class=site-nav__link href="/news/time/">Time Zone News</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/news/calendar/">Calendar &amp; Holiday News</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/newsletter/">Newsletter</a><li class=site-nav__item><a class=site-nav__link href="/live/">Live events</a></ul></li><li class="site-nav__menu "><a href="/worldclock/" class=site-nav__title>World Clock</a><ul class=site-nav__sub-menu><li class=site-nav__item><a class=site-nav__link href="/worldclock/">Main World Clock</a><li class=site-nav__item><a class=site-nav__link href="/worldclock/full.html">Extended World Clock</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/worldclock/personal.html">Personal World Clock</a><li class=site-nav__item><a class=site-nav__link href="/clocks/free.html">Clock for Your Site</a><li class=site-nav__item><a class=site-nav__link href="/worldclock/timezone/utc">UTC Time</a></ul></li><li class="site-nav__menu "><a href="/time/" class=site-nav__title>Time Zones</a><ul class=site-nav__sub-menu><li class="site-nav__item site-nav__item--divider site-nav__item--mob"><a class=site-nav__link href="/time">Time Zones Home</a><li class=site-nav__item><a class=site-nav__link href="/worldclock/converter.html">Time Zone Converter</a><li class=site-nav__item><a class=site-nav__link href="/worldclock/meeting.html">Meeting Planner</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/worldclock/fixedform.html">Event Time Announcer</a><li class=site-nav__item><a class=site-nav__link href="/time/map/">Time Zone Map</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/time/zones/">Time Zone Abbreviations</a><li class=site-nav__item><a class=site-nav__link href="/time/dst/">Daylight Saving Time</a><li class=site-nav__item><a class=site-nav__link href="/time/change/">Time Changes Worldwide</a><li class=site-nav__item><a class=site-nav__link href="/time/difference/">Time Difference</a><li class=site-nav__item><a class=site-nav__link href="/news/time/">Time Zone News</a></ul></li><li class="site-nav__menu "><a href="/calendar/" class=site-nav__title>Calendar</a><ul class=site-nav__sub-menu><li class="site-nav__item site-nav__item--divider site-nav__item--mob"><a class=site-nav__link href="/calendar/info.html">Calendars Home</a><li class=site-nav__item><a class=site-nav__link href="/calendar/">Calendar 2025</a><li class=site-nav__item><a class=site-nav__link href="/calendar/?year=2026">Calendar 2026</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/calendar/monthly.html">Monthly Calendar</a><li class=site-nav__item><a class=site-nav__link href="/calendar/create.html">Printable Calendar (PDF)</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/calendar/events/">Add Your Own Calendar Events</a><li class=site-nav__item><a class=site-nav__link href="/calendar/basic.html">Calendar Creator</a><li class=site-nav__item><a class=site-nav__link href="/holidays/">Holidays Worldwide</a><li class=site-nav__item><a class=site-nav__link href="/on-this-day/">On This Day in History</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/holidays/fun/">Fun Holidays</a><li class=site-nav__item><a class=site-nav__link href="/calendar/months/">Months of the Year</a><li class=site-nav__item><a class=site-nav__link href="/calendar/days/">Days of the Week</a><li class=site-nav__item><a class=site-nav__link href="/date/leapyear.html">About Leap Years</a><li class=site-nav__item><a class=site-nav__link href="/news/calendar/">Calendar &amp; Holiday News</a></ul></li><li class="site-nav__menu   active"><a href="/weather/" class=site-nav__title>Weather</a><ul class=site-nav__sub-menu><li class=site-nav__item><a class=site-nav__link href="/weather/">Worldwide</a><li class=site-nav__item><a class=site-nav__link href="/scripts/go.php">Local Weather</a><li class=site-nav__item><a class=site-nav__link href="/scripts/go.php?type=ext">2-Week Forecast</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/scripts/go.php?type=hourly">Hour-by-Hour</a><li class=site-nav__item><a class=site-nav__link href="/scripts/go.php?type=historic">Past Week</a><li class=site-nav__item><a class=site-nav__link href="/scripts/go.php?type=climate">Climate</a></ul></li><li class="site-nav__menu "><a href="/astronomy/" class=site-nav__title>Sun, Moon &amp; Space</a><ul class=site-nav__sub-menu><li class="site-nav__item site-nav__item--divider site-nav__item--mob"><a class=site-nav__link href="/astronomy">Sun &amp; Moon Home</a><li class=site-nav__item><a class=site-nav__link href="/sun/">Sun Calculator</a><li class=site-nav__item><a class=site-nav__link href="/moon/">Moon Calculator</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/moon/phases/">Moon Phases</a><li class=site-nav__item><a class=site-nav__link href="/astronomy/night/">Night Sky</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/astronomy/meteor-shower/">Meteor Showers</a><li class=site-nav__item><a class=site-nav__link href="/worldclock/sunearth.html">Day and Night Map</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/astronomy/moon/light.html">Moon Light World Map</a><li class=site-nav__item><a class=site-nav__link href="/eclipse/">Eclipses</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/live/">Live Streams</a><li class=site-nav__item><a class=site-nav__link href="/calendar/seasons.html">Seasons</a><li class=site-nav__item><a class=site-nav__link href="/news/astronomy/">Astronomy News</a></ul></li><li class="site-nav__menu "><a href="/counters/" class=site-nav__title>Timers</a><ul class=site-nav__sub-menu><li class="site-nav__item site-nav__item--mob"><a class=site-nav__link href="/counters">Timers Home</a><li class=site-nav__item><a class=site-nav__link href="/stopwatch/">Stopwatch</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/timer/">Timer</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/countdown/create">Countdown to Any Date</a><li class=site-nav__item><a class=site-nav__link href="/countdown/eclipse">Eclipse Countdown</a><li class=site-nav__item><a class=site-nav__link href="/countdown/summer">Summer Countdown</a><li class=site-nav__item><a class=site-nav__link href="/countdown/newyear">New Year Countdown</a><li class=site-nav__item><a class=site-nav__link href="/clocks/freecountdown.html">Countdown for Your Site</a></ul></li><li class="site-nav__menu "><a href="/date/" class=site-nav__title>Calculators</a><ul class=site-nav__sub-menu><li class="site-nav__item site-nav__item--divider site-nav__item--mob"><a class=site-nav__link href="/date/">Calculators Home</a><li class=site-nav__item><a class=site-nav__link href="/date/duration.html">Date to Date Calculator (duration)</a><li class=site-nav__item><a class=site-nav__link href="/date/workdays.html">Business Date to Date (exclude holidays)</a><li class=site-nav__item><a class=site-nav__link href="/date/dateadd.html">Date Calculator (add / subtract)</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/date/weekdayadd.html">Business Date (exclude holidays)</a><li class=site-nav__item><a class=site-nav__link href="/date/weekday.html">Weekday Calculator</a><li class=site-nav__item><a class=site-nav__link href="/date/weeknumber.html">Week Number Calculator</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/date/roman-calculator.html">Roman Numeral Converter</a><li class=site-nav__item><a class=site-nav__link href="/date/birthday.html">Alternative Age Calculator</a><li class=site-nav__item><a class=site-nav__link href="/date/pattern.html">Date Pattern Calculator</a><li class=site-nav__item><a class=site-nav__link href="/worldclock/distance.html">Distance Calculator</a></ul></li><li class="site-nav__menu site-nav__menu--my-account"><a href="/custom/" class=site-nav__title><i class='i-font i-account_circle site-nav__desktop-title'></i>  <span>My Account</span></a><ul class=site-nav__sub-menu><li class="site-nav__item site-nav__item--divider site-nav__item--mob"><a class=site-nav__link href="/custom">My Account</a><li class=site-nav__item><a id=popchi class=site-nav__link href="/custom/location.html">My Location</a><li class=site-nav__item><a class=site-nav__link href="/custom/site.html">My Units</a><li class=site-nav__item><a class=site-nav__link href="/calendar/events/">My Events</a><li class=site-nav__item><a class=site-nav__link href="/worldclock/personal.html">My World Clock</a><li class="site-nav__item site-nav__item--divider"><a class=site-nav__link href="/custom/privacy.html">My Privacy</a><li class=site-nav__item><a class=site-nav__link href="/services/">Paid Services</a><li class=site-nav__item><a id=poplogin class=site-nav__link href="/custom/login.html">Sign in</a><li class=site-nav__item><a id=popreg class=site-nav__link href="/custom/create.html">Register</a></ul></li>
+</ul> 
+</div>
+<div class=site-nav-bar__blur id=site-nav-blur></div>
+</div>
+</nav>
+</div>
+</div><div id=po1 class=po></div><div id=mpo></div><div id=anw class=alert-notice__wrap></div><div class=main-content-div><script>
+window.TAD=window.TAD||{};TAD.abtest='a';
+</script><script>window.TAD=window.TAD||{};window.TAD.toCdnAssetUrl=function(a){return '//c.tadst.com/com/common/frontend/26/' + a;}</script><div class=fixed></div><header class="bn-header bn-header--weather"><div class="row socrow"><div id=bc class="fixed"><div id=bct><a target=_top href="/" class=fx>Home</a> &nbsp; <a target=_top href="/weather/" class=fx>Weather</a></div></div></div><div class="fixed "><div class=bn-header__title-flex><div class=bn-header__title-wrap><h1 class=bn-header__title>Weather Around The World &mdash; Search Results</h1><p class=bn-header__brief>Forecast for today, tomorrow, next 14 days, and much more...</p></div><form action="/weather/" class="bn-header__searchbox picker-city noprint"><input type=search autocomplete=off class=picker-city__input placeholder="Search for city or place…" onfocus="ifc(this,'ci',1,5,{&quot;pre&quot;:&quot;/weather/&quot;})" name=query /><button type=submit class=picker-city__button title=Search><i class="i-font i-search"></i></button></form></div></div></header><section class="bg--grey pdflexi-t--small"><div class=fixed>
+
+
+
+<header class=fixed>
+
+</header><div class=fixed><div class=my-city__clocks><h3 class=my-city__header>My Cities (Personal World Clock) ... <a href="/worldclock/personal.html" title="Go to Personal World Clock">edit</a></h3><div class=my-city__items><div class=my-city__item><a href="/weather/usa/washington-dc" title="Washington DC"><img class=my-city__wt-icon src="//c.tadst.com/gfx/w/svg/wt-14.svg"></a><a href="/weather/usa/washington-dc" class=my-city__title><img src="//c.tadst.com/gfx/n/fl/32/us.png" class=my-city__flag><span class=my-city__city>Washington DC</span></a><span class=my-city__wt><i class="i-font soft"></i><span class=my-city__temp>57&nbsp;°F</span><span class=my-city__wtdesc>Passing clouds.</span></span><span class=my-city__time-wrap><span class=my-city__digitalClock><span id=c263dat class=my-city__date>Fri</span> <span id=c263>9:28</span><span class=my-city__secondsDivider>:</span><span id=c263sec class=my-city__seconds>39</span><span id=c263ampm class=my-city__ampm>pm</span></span></span></div><div class=my-city__item><a href="/weather/usa/new-york" title="New York"><img class=my-city__wt-icon src="//c.tadst.com/gfx/w/svg/wt-17.svg"></a><a href="/weather/usa/new-york" class=my-city__title><img src="//c.tadst.com/gfx/n/fl/32/us.png" class=my-city__flag><span class=my-city__city>New York</span></a><span class=my-city__wt><span class=my-city__temp>53&nbsp;°F</span><span class=my-city__wtdesc>Mostly cloudy.</span></span><span class=my-city__time-wrap><span class=my-city__digitalClock><span id=c179dat class=my-city__date>Fri</span> <span id=c179>9:28</span><span class=my-city__secondsDivider>:</span><span id=c179sec class=my-city__seconds>39</span><span id=c179ampm class=my-city__ampm>pm</span></span></span></div><div class=my-city__item><a href="/weather/uk/london" title=London><img class=my-city__wt-icon src="//c.tadst.com/gfx/w/svg/wt-13.svg"></a><a href="/weather/uk/london" class=my-city__title><img src="//c.tadst.com/gfx/n/fl/32/gb.png" class=my-city__flag><span class=my-city__city>London</span></a><span class=my-city__wt><span class=my-city__temp>48&nbsp;°F</span><span class=my-city__wtdesc>Clear.</span></span><span class=my-city__time-wrap><span class=my-city__digitalClock><span id=c136dat class=my-city__date>Sat</span> <span id=c136>2:28</span><span class=my-city__secondsDivider>:</span><span id=c136sec class=my-city__seconds>39</span><span id=c136ampm class=my-city__ampm>am</span></span></span></div><div class=my-city__item><a href="/weather/japan/tokyo" title=Tokyo><img class=my-city__wt-icon src="//c.tadst.com/gfx/w/svg/wt-18.svg"></a><a href="/weather/japan/tokyo" class=my-city__title><img src="//c.tadst.com/gfx/n/fl/32/jp.png" class=my-city__flag><span class=my-city__city>Tokyo</span></a><span class=my-city__wt><span class=my-city__temp>64&nbsp;°F</span><span class=my-city__wtdesc>Light rain. Fog.</span></span><span class=my-city__time-wrap><span class=my-city__digitalClock><span id=c248dat class=my-city__date>Sat</span> <span id=c248>10:28</span><span class=my-city__secondsDivider>:</span><span id=c248sec class=my-city__seconds>39</span><span id=c248ampm class=my-city__ampm>am</span></span></span></div></div></div><div id=ad300>Advertising<br><div id='div-gpt-com-300x250' style='min-width:300px;min-height:250px;'><script>
+AdMgr.dispSlot(1);
+</script>
+</div></div>
+</div><nav class=tb-quick-change><strong>Popular Lists: </strong><a href="/worldclock/">World Clock</a> | <a href="/weather/?continent=africa">Africa</a> | <a href="/weather/?continent=namerica">North America</a> | <a href="/weather/?continent=samerica">South America</a> | <a href="/weather/?continent=asia">Asia</a> | <a href="/weather/?continent=australasia">Australia/Pacific</a> | <a href="/weather/?continent=europe">Europe</a> | <a href="/weather/?sort=1&low=c">Capitals</a><br></nav><section id=clc-results class=fixed><h2>Results of Search for "virginia beach, va, usa" <span class=accent>&ndash; (67)</span></h2></section>
+<section class=fixed><button type=button href="/custom/site.html" class=tb-conf onclick="return modpop('/scripts/tzq.php?cb=14346191&type=wc',null,'Customize Table');" title="Configure table settings" aria-hidden=true>&nbsp;</button><button type=button href="/custom/site.html" class=tp-conf onclick="return modpop('/scripts/tzq.php?cb=14346191&type=weather',null,'Change Units for Weather');" title="Change Units" aria-hidden=true>°F</button><div class=row><div class=tb-scroll><table class="zebra fw tb-theme"><thead><tr><th colspan=4><h3 class=tb-header>Local Time and Weather   </h3><div class=tb-show><form id=wc-sort name=wc-sort class=inline action="/scripts/gowc.php" aria-hidden=true method=get><label for=sort>Sort By: </label><select id=sort name=sort onchange="this.form.submit()"><option value=4 selected>Relevance</option><option value=0>City</option><option value=1>Country</option><option value=2>Time</option><option value=6>Temperature</option></select><input type=hidden name=url value="/weather/"><input type=hidden name=args value="query=virginia%20beach,%20va,%20usa"></form></div><div class="tb-show mgr10"></div></th></tr></thead><tr><td><a href="/weather/@7198121">USA, Virginia, Aquia Beach</a><span id=p0s class=wds> *</span></td><td id=p0 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@7197803">USA, Virginia, Aquia Landing Beach Park</a><span id=p1s class=wds> *</span></td><td id=p1 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-13.svg" alt="Clear. Cool." title="Clear. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4745271">USA, Virginia, Baileys Beach</a><span id=p2s class=wds> *</span></td><td id=p2 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Cool." title="Mostly cloudy. Cool." width=40 height=40></td><td class=rbi>61&nbsp;°F</td></tr><tr><td><a href="/weather/@4745855">USA, Virginia, Bay View Beach</a><span id=p3s class=wds> *</span></td><td id=p3 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-15.svg" alt="Partly cloudy. Mild." title="Partly cloudy. Mild." width=40 height=40></td><td class=rbi>67&nbsp;°F</td></tr><tr><td><a href="/weather/@4745859">USA, Virginia, Baylake Beach</a><span id=p4s class=wds> *</span></td><td id=p4 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4745928">USA, Virginia, Beach Creek Spit</a><span id=p5s class=wds> *</span></td><td id=p5 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4745905">USA, Virginia, Beach Island</a><span id=p6s class=wds> *</span></td><td id=p6 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4745908">USA, Virginia, Beach Point</a><span id=p7s class=wds> *</span></td><td id=p7 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4746583">USA, Virginia, Belvedere Beach</a><span id=p8s class=wds> *</span></td><td id=p8 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-13.svg" alt="Clear. Cool." title="Clear. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4746916">USA, Virginia, Bethel Beach</a><span id=p9s class=wds> *</span></td><td id=p9 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4748490">USA, Virginia, Bow Beach</a><span id=p10s class=wds> *</span></td><td id=p10 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4749692">USA, Virginia, Buckroe Beach</a><span id=p11s class=wds> *</span></td><td id=p11 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4749693">USA, Virginia, Buckroe Beach Amusement Park</a><span id=p12s class=wds> *</span></td><td id=p12 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4751582">USA, Virginia, Cedar Island Beach</a><span id=p13s class=wds> *</span></td><td id=p13 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4752194">USA, Virginia, Chesapeake Beach</a><span id=p14s class=wds> *</span></td><td id=p14 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4791271">USA, Virginia, City of Virginia Beach</a><span id=p15s class=wds> *</span></td><td id=p15 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4753654">USA, Virginia, Colonial Beach</a><span id=p16s class=wds> *</span></td><td id=p16 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4755383">USA, Virginia, Davis Beach</a><span id=p17s class=wds> *</span></td><td id=p17 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4756718">USA, Virginia, Dunlap Beach</a><span id=p18s class=wds> *</span></td><td id=p18 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-13.svg" alt="Clear. Cool." title="Clear. Cool." width=40 height=40></td><td class=rbi>48&nbsp;°F</td></tr><tr><td><a href="/weather/@4758185">USA, Virginia, Fairview Beach</a><span id=p19s class=wds> *</span></td><td id=p19 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-13.svg" alt="Clear. Cool." title="Clear. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@7197819">USA, Virginia, Falmouth Beach Park</a><span id=p20s class=wds> *</span></td><td id=p20 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-13.svg" alt="Clear. Cool." title="Clear. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4760508">USA, Virginia, Gargathy Beach</a><span id=p21s class=wds> *</span></td><td id=p21 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4763360">USA, Virginia, Haven Beach</a><span id=p22s class=wds> *</span></td><td id=p22 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4765298">USA, Virginia, Hungars Beach</a><span id=p23s class=wds> *</span></td><td id=p23 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4767931">USA, Virginia, Kiptopeke Beach</a><span id=p24s class=wds> *</span></td><td id=p24 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4769711">USA, Virginia, Little Beach</a><span id=p25s class=wds> *</span></td><td id=p25 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4770996">USA, Virginia, Lunenburg Beach</a><span id=p26s class=wds> *</span></td><td id=p26 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4771379">USA, Virginia, Malo Beach</a><span id=p27s class=wds> *</span></td><td id=p27 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4773583">USA, Virginia, Mogarts Beach</a><span id=p28s class=wds> *</span></td><td id=p28 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Cool." title="Mostly cloudy. Cool." width=40 height=40></td><td class=rbi>61&nbsp;°F</td></tr><tr><td><a href="/weather/@4775364">USA, Virginia, Myrtle Island Beach</a><span id=p29s class=wds> *</span></td><td id=p29 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4775430">USA, Virginia, Narrow Beach</a><span id=p30s class=wds> *</span></td><td id=p30 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4775431">USA, Virginia, Narrow Beach</a><span id=p31s class=wds> *</span></td><td id=p31 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4775519">USA, Virginia, Naylors Beach</a><span id=p32s class=wds> *</span></td><td id=p32 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4776490">USA, Virginia, North Virginia Beach</a><span id=p33s class=wds> *</span></td><td id=p33 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4777083">USA, Virginia, Old Beach</a><span id=p34s class=wds> *</span></td><td id=p34 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4778025">USA, Virginia, Parramore Beach</a><span id=p35s class=wds> *</span></td><td id=p35 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4778250">USA, Virginia, Peaceful Beach</a><span id=p36s class=wds> *</span></td><td id=p36 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4778251">USA, Virginia, Peaceful Beach Estates</a><span id=p37s class=wds> *</span></td><td id=p37 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4778956">USA, Virginia, Pine Beach (historical)</a><span id=p38s class=wds> *</span></td><td id=p38 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4779636">USA, Virginia, Point Beach</a><span id=p39s class=wds> *</span></td><td id=p39 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>62&nbsp;°F</td></tr><tr><td><a href="/weather/@4780065">USA, Virginia, Potomac Beach</a><span id=p40s class=wds> *</span></td><td id=p40 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4780872">USA, Virginia, Ragged Point Beach</a><span id=p41s class=wds> *</span></td><td id=p41 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4780873">USA, Virginia, Ragged Point Beach</a><span id=p42s class=wds> *</span></td><td id=p42 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4781709">USA, Virginia, Richmond Beach</a><span id=p43s class=wds> *</span></td><td id=p43 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4784329">USA, Virginia, Sandbridge Beach</a><span id=p44s class=wds> *</span></td><td id=p44 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4785688">USA, Virginia, Silver Beach</a><span id=p45s class=wds> *</span></td><td id=p45 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4786125">USA, Virginia, Smith Beach</a><span id=p46s class=wds> *</span></td><td id=p46 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4786124">USA, Virginia, Smith Beach</a><span id=p47s class=wds> *</span></td><td id=p47 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4786214">USA, Virginia, Smith Island Beach</a><span id=p48s class=wds> *</span></td><td id=p48 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4786383">USA, Virginia, Snead Beach</a><span id=p49s class=wds> *</span></td><td id=p49 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4786484">USA, Virginia, Somerset Beach</a><span id=p50s class=wds> *</span></td><td id=p50 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4786502">USA, Virginia, Sound Beach</a><span id=p51s class=wds> *</span></td><td id=p51 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4788342">USA, Virginia, Sunken Meadow Beach</a><span id=p52s class=wds> *</span></td><td id=p52 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4788780">USA, Virginia, Tankards Beach</a><span id=p53s class=wds> *</span></td><td id=p53 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@7161590">USA, Virginia, Town of Colonial Beach</a><span id=p54s class=wds> *</span></td><td id=p54 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4790522">USA, Virginia, Tylers Beach</a><span id=p55s class=wds> *</span></td><td id=p55 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Cool." title="Mostly cloudy. Cool." width=40 height=40></td><td class=rbi>61&nbsp;°F</td></tr><tr><td><a href="/weather/@6348622">USA, Virginia, Verizon Wireless Virginia Beach Amphitheater</a><span id=p56s class=wds> *</span></td><td id=p56 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4791259">USA, Virginia, Virginia Beach</a><span id=p57s class=wds> *</span></td><td id=p57 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4792007">USA, Virginia, Wallops Beach</a><span id=p58s class=wds> *</span></td><td id=p58 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-7.svg" alt="Overcast. Mild." title="Overcast. Mild." width=40 height=40></td><td class=rbi>63&nbsp;°F</td></tr><tr><td><a href="/weather/@4793429">USA, Virginia, White Stone Beach</a><span id=p59s class=wds> *</span></td><td id=p59 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4793616">USA, Virginia, Widewater Beach</a><span id=p60s class=wds> *</span></td><td id=p60 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>57&nbsp;°F</td></tr><tr><td><a href="/weather/@4793712">USA, Virginia, Wildwood Beach</a><span id=p61s class=wds> *</span></td><td id=p61 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4793711">USA, Virginia, Wildwood Beach</a><span id=p62s class=wds> *</span></td><td id=p62 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-14.svg" alt="Passing clouds. Cool." title="Passing clouds. Cool." width=40 height=40></td><td class=rbi>56&nbsp;°F</td></tr><tr><td><a href="/weather/@4793740">USA, Virginia, Wilkins Beach</a><span id=p63s class=wds> *</span></td><td id=p63 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4793948">USA, Virginia, Willoughby Beach</a><span id=p64s class=wds> *</span></td><td id=p64 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4793947">USA, Virginia, Willoughby Beach</a><span id=p65s class=wds> *</span></td><td id=p65 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Mild." title="Mostly cloudy. Mild." width=40 height=40></td><td class=rbi>64&nbsp;°F</td></tr><tr><td><a href="/weather/@4794972">USA, Virginia, Yorktown Beach</a><span id=p66s class=wds> *</span></td><td id=p66 class=r>Fri 9:28 pm</td><td class=r><img src="//c.tadst.com/gfx/w/svg/wt-17.svg" alt="Mostly cloudy. Cool." title="Mostly cloudy. Cool." width=40 height=40></td><td class=rbi>61&nbsp;°F</td></tr></table></div></div><div id=tb-foot class=row><div class="six columns"><p><strong><span class=wds> *</span></strong>  Adjusted for <a href="/time/dst/">Daylight Saving Time</a> <span id=smwi7> (67 places).</span></p><p><strong>Fri</strong> = Friday, May 9, 2025 <span id=smwi5> (67 places).</span><br></p></div><div class="six columns"><p><strong>UTC</strong> (GMT/Zulu)-time: <strong id=ctu>Saturday, May 10, 2025 at 01:28:39</strong></p><p><span class=small>UTC is <a href="/time/aboututc.html">Coordinated Universal Time</a>, GMT is <a href="/time/gmt-utc-time.html">Greenwich Mean Time</a>.</span><br><a href="/time/united-kingdom-bst.html">Great Britain/United Kingdom is one hour ahead of UTC during summer.</a></p></div></div></section><script type="text/javascript">
+et=1747012319;
+function f0(d){return TAD.ld[d.getUTCDay()]+', '+TAD.lm[d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear()+' at '+((d.getUTCHours()+11)%12+1)+':'+p2(d.getUTCMinutes())+':'+p2(d.getUTCSeconds())+' '+_ap(d);}
+function f1(d){return TAD.ld[d.getUTCDay()]+', '+TAD.lm[d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear()+' at '+p2(d.getUTCHours())+':'+p2(d.getUTCMinutes())+':'+p2(d.getUTCSeconds());}
+function f2(d){return ((d.getUTCHours()+11)%12+1)+':'+p2(d.getUTCMinutes());}
+function f3(d){return ''+_ap4(d);}
+function f4(d){return ''+p2(d.getUTCSeconds());}
+function f5(d){return TAD.sd1[d.getUTCDay()];}
+function f6(d){return TAD.sd1[d.getUTCDay()]+' '+((d.getUTCHours()+11)%12+1)+':'+p2(d.getUTCMinutes())+' '+_ap4(d);}
+cks={"ctu":{"t":[{"t":0,"o":0,"a":"UTC"}],"f":f1},"c263":{"t":[{"o":-14400,"a":"<a href=\"\/time\/zones\/edt\" title=\"Eastern Daylight Time\">EDT<\/a>","af":"Eastern Daylight Time","d":1}],"f":f2,"g":{"t":2},"fx":[{"n":"ampm","f":f3},{"n":"sec","f":f4},{"n":"dat","f":f5}],"e":"c179"},"c136":{"t":[{"o":3600,"a":"<a href=\"\/time\/zones\/bst\" title=\"British Summer Time\">BST<\/a>","af":"British Summer Time","d":1}],"f":f2,"g":{"t":2},"fx":[{"n":"ampm","f":f3},{"n":"sec","f":f4},{"n":"dat","f":f5}]},"c248":{"t":[{"o":32400,"a":"<a href=\"\/time\/zones\/jst\" title=\"Japan Standard Time\">JST<\/a>","af":"Japan Standard Time"}],"f":f2,"g":{"t":2},"fx":[{"n":"ampm","f":f3},{"n":"sec","f":f4},{"n":"dat","f":f5}]},"p0":{"t":[{"o":-14400,"d":1}],"f":f6,"e":"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66"}};
+TAD=window.TAD||{};TAD.lm=[];TAD.lm[4]='May';TAD.ld=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];TAD.sd1=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function _ap(d){var t=Math.floor(d.getTime()/1E3+8640000000)%86400;if(t===0){return 'midnight';}if(t==43200){return 'noon';}if(t<43200){return 'am';}return 'pm';}
+
+function _ap4(d){var t=Math.floor(d.getTime()/1E3+8640000000)%86400;if(t<60){return 'midnight';}if(t>=43200 && t<=43259){return 'noon';}if(t<43200){return 'am';}return 'pm';}
+dsts=" *";function updwds(n){return '('+n+' '+((n==1)?'place listed':'places listed')+').';}
+
+</script></div></section><section id=include-extras class=fixed><div class=botlnk><h2>Useful Weather Information</h2><ul><li><a href="/weather/glossary.html">Weather words and terminology</a></li></ul><h2>Interesting Weather Topics</h2><ul><li><a href="/weather/daily-temperature-readings.html">About the Temperature Readings</a></li><li><a href="/weather/forecast-accuracy-time.html">Accuracy of Weather Forecasts</a></li><li><a href="/weather/report-frequency.html">Frequency of Weather Reports</a></li></ul><h2>Related Links</h2><ul><li><a href="/time/map/">Time Zone Map</a></li><li><a href="/worldclock/personal.html">Personal World Clock</a></li><li><a href="/worldclock/converter.html">Time Zone Converter</a> &#8211; Convert time between cities in different time zones</li><li><a href="/worldclock/meeting.html">Meeting Planner</a> &#8211; The best times for your meeting across time zones</li><li><a href="/worldclock/fixedform.html">Event Time Announcer</a> &#8211; Show local times worldwide for your event.</li></ul></div></section><script src="//c.tadst.com/com/common/wcommon_33.js"></script> </div>
+</div>
+
+<footer class="footer">
+ <section class="feedback-bar">
+ <div class="fixed feedback-bar__wrap">
+ <section id="instant-feedback" class="feedback-bar__instant-feedback">
+ <span class="feedback-bar__msg">How was your experience?</span>
+ <span class="feedback-bar__thankyou">Thank you for your feedback!</span>
+ <a href="#" onclick="return blif(1)" class="feedback-bar__thumb feedback-bar__thumb--up" title="Vote Good" aria-label="Vote for having a good experience"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg></a>
+ 
+ <a href="#" onclick="return blif(0)" class="feedback-bar__thumb feedback-bar__thumb--down" title="Vote Bad" aria-label="Vote for having a bad experience"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+ </a>
+ </section>
+ 
+ <section class="feedback-bar__contact"><a id=bls1 href="/information/feedback.html" onclick="return bls(this)">Contact Us 
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg></a></section>
+ </div>
+ </section>
+
+ <section class="fixed footer__wrap">
+ <section class="footer__block footer__block--promo">
+ <article class="footer-card">
+ <a href="/services/supporter.html" class="footer-card__img-link">
+ <img class="footer-card__img" width="100" height="100" src="//c.tadst.com/gfx/n/i/service__supporter.svg" loading="lazy" alt="Illustration of a pink shield with a white heart." />
+ </a>
+ <section class="footer-card__content">
+ <h4 class="footer-card__title">
+ <a href="/services/supporter.html">
+  Love Our Site? Become a Supporter
+  </a>
+ </h4>
+ <ul class="footer-card__text">
+ <li>Browse our site <strong>advert free.</strong></li>
+ <li>Sun &amp; Moon times <strong>precise to the second.</strong></li>
+ <li><strong>Exclusive calendar templates</strong> for PDF Calendar.</li>
+ </ul>
+ </section>
+ </article>
+ <section class="footer__logo">
+ <a href="/" rel="home"><img src="//c.tadst.com/gfx/n/logo/logo-2021--horizontal-color-whitebg.svg" loading="lazy" alt="The timeanddate logo" width="176" height="24"></a>
+ <p><a href="/information/copyright.html">© Time and Date AS 1995–2025</a></p>
+ </section>
+ </section>
+ <section class="footer__block footer__block--links-wrap">
+ <section class="footer__links">
+ <nav class="footer__links-block footer__links-block--company">
+ <h4>Company</h4>
+ <ul>
+ <li><a href="/company/">About us</a></li>
+ <li><a href="/company/jobs">Careers/Jobs</a></li>
+ <li><a href="/information/feedback.html" id=bls2 onclick="return bls(this)">Contact Us</a></li>
+  <li><a href="/information/contact.html">Contact Details</a></li>
+   <li><a href="/sitemap.html">Sitemap</a></li>
+  <li><a href="/newsletter/">Newsletter</a></li>
+ </ul>
+ </nav>
+ <nav class="footer__links-block footer__links-block--legal">
+ <h4>Legal</h4>
+ <ul>
+ <li><a href="/information/copyright.html">Link policy</a></li>
+ <li><a href="/information/advertising.html">Advertising</a></li>
+ <li><a href="/information/disclaimer.html">Disclaimer</a></li>
+ <li><a href="/information/terms-conditions.html">Terms &amp; Conditions</a></li>
+ <li><a href="/information/privacy.html">Privacy Policy</a></li>
+
+
+ <li><a href="/custom/privacy.html">My Privacy</a></li>
+ 
+  
+ 
+ 
+ </ul>
+ </nav>
+ <nav class="footer__links-block footer__links-block--services">
+ <h4>Services</h4>
+ <ul>
+ <li><a href="/worldclock/">World Clock</a></li>
+ <li><a href="/time/">Time Zones</a></li>
+ <li><a href="/calendar/">Calendar</a></li>
+ <li><a href="/weather/">Weather</a></li>
+ <li><a href="/astronomy/">Sun &amp; Moon</a></li>
+ <li><a href="/counters/">Timers</a></li>
+ <li><a href="/date/">Calculators</a></li>
+ <li><a href="/services/api/">API</a></li>
+ <li><a href="/extra/">Apps</a></li>
+ </ul>
+ </nav>
+ <nav class="footer__links-block footer__links-block--sites">
+ <h4>Sites</h4>
+ <ul>
+   <li><a href="https://www.timeanddate.no">timeanddate.no</a></li>
+   <li><a href="https://www.timeanddate.de">timeanddate.de</a></li>
+  </ul>
+ </nav>
+ <section class="footer__social">
+ <h4>Follow Us</h4>
+ <div class="footer__social-icons">
+ <a href="https://www.facebook.com/timeanddate/"><i class="footer__social-icon footer__social-icon--facebook" title="timeanddate.com on Facebook"></i></a>
+ <a href="https://twitter.com/timeanddate"><i class="footer__social-icon footer__social-icon--twitter" title="timeanddate.com on Twitter"></i></a>
+ <a href="https://www.linkedin.com/company/time-and-date-as/about/"><i class="footer__social-icon footer__social-icon--linkedin" title="timeanddate.com on Linkedin"></i></a>
+ <a href="https://www.instagram.com/timeanddatecom/"><i class="footer__social-icon footer__social-icon--instagram" title="timeanddate.com on Instagram"></i></a>
+ <a href="https://www.youtube.com/c/timeanddate"><i class="footer__social-icon footer__social-icon--youtube" title="timeanddate.com on YouTube"></i></a>
+ </div>
+ </section>
+ </section>
+ 
+ <p class="footer__copyright">
+ © Time and Date AS 1995–2025. 
+ <a href="/information/copyright.html">Privacy &amp; Terms</a>
+ </p>
+ </section>
+ </section>
+</footer>
+<!-- FOOTER END -->
+
+<script>
+bli();main();
+</script>
+ 
+<div id=FBD style="display:none" class=wfc></div>
+
+
+</body></html>

@@ -1,0 +1,6 @@
+
+### Example URL
+
+Virginia Beach, 2 adults, max total price $400 all in, fully refundable only.
+
+https://www.expedia.com/Hotel-Search?MDPCID=US.META.HPA.HOTEL-CORESEARCH-desktop.HOTEL&MDPDTL=HTL.1100197.20250516.20250518.DDF.7.CID.19735089272.AUDID..RRID.bex_us_desktop&ad=2&adults=2&children=&ct=hotel&daysInFuture&destination=Virginia%20Beach%20City%20County,%20Virginia,%20United%20States%20of%20America&endDate=2025-05-24&exp_pg=google&gad_campaignid=19735089272&gbraid=0AAAAAC9H9Cz_M9IU98dIm-7LJ1ZYSvLiV&isInvalidatedDate=false&langid=en&langid=1033&latLong=36.83761,-75.94807&mapBounds=36.7765,-76.07668&mapBounds=36.89866,-75.81945&mctc=10&mpf=202.12&mpg=USD&mpj=49.14&mpl=USD&mpm=24&mpn=200242666&mpo=EC&mpp=1&neighborhood=&paymentType=FREE_CANCELLATION&price=0&price=400&pwaDialog=&pwaOverlay=&rateplanid=201403330&regionId=755527074154823680&selected=&semdtl=&sort=RECOMMENDED&startDate=2025-05-22&stayLength&theme=&tp=&upsellingDiscountTypeAdded=&upsellingNumNightsAdded=&useRewards=false&userIntent=
