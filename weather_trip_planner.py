@@ -130,7 +130,7 @@ def search_location(city_name):
         location_id = usa_locations[0]['id']
         location_name = usa_locations[0]['name']
         print(f"\nSelected location: {location_name} (ID: {location_id})")
-        return location_id, location_name, location_text
+        return location_id, location_name, usa_locations[0]['full_text']
         
     except Exception as e:
         print(f"Error searching for location: {e}")
@@ -193,10 +193,10 @@ def process_city(city_name, trip_length, max_price):
     
     print(f"Found forecast data for {len(forecast_data)} days")
     
-    print(f"Finding {trip_length}-night periods without rain that are weekend-adjacent...")
-    rain_free_periods = find_rain_free_periods(forecast_data, trip_length)
+    print(f"Finding {trip_length}-night periods with good weather that are weekend-adjacent...")
+    suitable_periods = find_suitable_periods(forecast_data, trip_length)
     
-    if not rain_free_periods:
+    if not suitable_periods:
         print(f"No suitable periods found in the 14-day forecast for {city_name}")
         return []
     
@@ -204,7 +204,7 @@ def process_city(city_name, trip_length, max_price):
     city_results = []
     
     print(f"\nSuitable periods for {city_name}:")
-    for i, period in enumerate(rain_free_periods, 1):
+    for i, period in enumerate(suitable_periods, 1):
         start_date = period['start_date']
         end_date = period['end_date']
         
@@ -217,7 +217,13 @@ def process_city(city_name, trip_length, max_price):
         # Calculate nights from days
         nights = days_in_range - 1
         
+        # Count rainy days
+        rainy_days = sum(1 for day in period['days'] if day['has_rain'])
+        total_days = len(period['days'])
+        rain_percentage = (rainy_days / total_days) * 100
+        
         print(f"{i}. {start_date_str} to {end_date_str} ({nights} nights / {days_in_range} days)")
+        print(f"   Rain: {rainy_days}/{total_days} days ({rain_percentage:.1f}%)")
         
         # Collect forecast details
         forecast_details = []
@@ -226,7 +232,13 @@ def process_city(city_name, trip_length, max_price):
             temp_str = ""
             if day['temp_high'] and day['temp_low']:
                 temp_str = f" [{day['temp_high']}°F / {day['temp_low']}°F]"
-            forecast_details.append(f"   - {date_str}{temp_str}: {day['description']}")
+            
+            # Add rain probability if available
+            rain_prob_str = ""
+            if day['rain_probability'] is not None:
+                rain_prob_str = f" (Rain: {day['rain_probability']}%)"
+                
+            forecast_details.append(f"   - {date_str}{temp_str}: {day['description']}{rain_prob_str}")
             print(forecast_details[-1])
         
         # Generate Expedia URL for this period
@@ -244,7 +256,9 @@ def process_city(city_name, trip_length, max_price):
             'nights': nights,
             'days': days_in_range,
             'forecast': forecast_details,
-            'expedia_url': expedia_url
+            'expedia_url': expedia_url,
+            'rain_percentage': rain_percentage,
+            'days_data': period['days']  # Include full days data for summary
         })
         
     return city_results
@@ -345,6 +359,7 @@ def parse_forecast(html_content):
             # Check for precipitation in the row
             precip_cells = row.find_all('td')
             has_rain = False
+            rain_probability = None
             
             if weather_desc:
                 # Check weather description for rain-related terms
@@ -353,12 +368,13 @@ def parse_forecast(html_content):
                                'precipitation', 'sprinkle', 'tstorm'])
             
             # If no weather description found, check for precipitation chance
-            if not has_rain and len(precip_cells) >= 8:  # The chance column is usually 8th td
+            if len(precip_cells) >= 8:  # The chance column is usually 8th td
                 chance_cell = precip_cells[7]  # 0-indexed, so 8th cell is index 7
                 chance_text = chance_cell.text.strip()
                 if chance_text and chance_text != '0%':
                     try:
                         chance = int(chance_text.replace('%', ''))
+                        rain_probability = chance
                         if chance > 20:  # If more than 20% chance, consider it might rain
                             has_rain = True
                     except ValueError:
@@ -388,6 +404,7 @@ def parse_forecast(html_content):
                 'day_of_week': day_of_week,
                 'description': weather_desc,
                 'has_rain': has_rain,
+                'rain_probability': rain_probability,
                 'temp_high': temp_high,
                 'temp_low': temp_low
             })
@@ -418,17 +435,17 @@ def is_weekend_adjacent(start_date, end_date):
     
     return is_weekend_day(before_start) or is_weekend_day(after_end)
 
-def find_rain_free_periods(forecast_data, trip_length):
-    """Find date ranges of specified length that have no rain and are weekend-adjacent.
+def find_suitable_periods(forecast_data, trip_length):
+    """Find date ranges of specified length that meet weather criteria and are weekend-adjacent.
     
     Args:
         forecast_data: List of daily forecast dictionaries
         trip_length: Number of NIGHTS to stay (n nights = n+1 days)
     
     Returns:
-        List of rain-free periods that are weekend-adjacent
+        List of suitable periods that are weekend-adjacent
     """
-    rain_free_periods = []
+    suitable_periods = []
     
     # Convert trip_length to integer
     trip_length = int(trip_length)
@@ -440,23 +457,47 @@ def find_rain_free_periods(forecast_data, trip_length):
     for i in range(len(forecast_data) - days_needed + 1):
         start_date = forecast_data[i]['date']
         end_date = forecast_data[i + days_needed - 1]['date']
+        days_range = [forecast_data[i + j] for j in range(days_needed)]
         
-        # Check if all days in this period are rain-free
-        is_rain_free = True
-        for j in range(days_needed):
-            if forecast_data[i + j]['has_rain']:
-                is_rain_free = False
-                break
+        # Count rainy days in this period
+        rainy_days = sum(1 for day in days_range if day['has_rain'])
         
-        # If rain-free and weekend-adjacent, add to results
-        if is_rain_free and is_weekend_adjacent(start_date, end_date):
-            rain_free_periods.append({
+        # Check if rain on first or last day is ≤ 30%
+        start_day_rain_prob = days_range[0]['rain_probability'] or 0
+        end_day_rain_prob = days_range[-1]['rain_probability'] or 0
+        
+        # Debug output for each potential period
+        # print(f"\nEvaluating period: {start_date.strftime('%a, %b %d')} to {end_date.strftime('%a, %b %d')}")
+        # print(f"Rainy days: {rainy_days}/{days_needed} (needs < {days_needed / 2})")
+        # print(f"Start day rain: {start_day_rain_prob}% (needs ≤ 30%)")
+        # print(f"End day rain: {end_day_rain_prob}% (needs ≤ 30%)")
+        # print(f"Weekend adjacent: {is_weekend_adjacent(start_date, end_date)}")
+        
+        # # Print details for each day
+        # for j, day in enumerate(days_range):
+        #     print(f"  Day {j+1} ({day['date'].strftime('%a, %b %d')}): " +
+        #           f"Rain prob: {day['rain_probability'] or 0}%, " +
+        #           f"has_rain: {day['has_rain']}")
+        
+        # Check criteria:
+        # 1. Less than half the days have rain
+        # 2. Both departure and arrival have ≤ 30% rain probability
+        # 3. Is weekend-adjacent
+        if (rainy_days < days_needed / 2 and  # Less than half the days have rain
+            start_day_rain_prob <= 30 and     # ≤ 30% chance on departure
+            end_day_rain_prob <= 30 and       # ≤ 30% chance on arrival
+            is_weekend_adjacent(start_date, end_date)):  # Weekend-adjacent
+            
+            # print(f"✓ Period PASSES all criteria")
+            suitable_periods.append({
                 'start_date': start_date,
                 'end_date': end_date,
-                'days': [forecast_data[i + j] for j in range(days_needed)]
+                'days': days_range
             })
+        # else:
+            # print(f"✗ Period FAILS criteria")
     
-    return rain_free_periods
+    return suitable_periods
 
 def generate_expedia_url(city_name, state_abbr, start_date, end_date, max_price):
     """Generate an Expedia hotel search URL for the given parameters."""
@@ -546,18 +587,18 @@ def main():
     all_results.sort(key=lambda x: x['start_date'])  # Sort by start date
     
     for i, result in enumerate(all_results, 1):
-        # Extract temperature information from forecast days
-        temp_info = []
-        for day_forecast in result['forecast']:
-            # Extract temperature from the forecast string
-            temp_match = re.search(r'\[(\d+)°F / (\d+)°F\]', day_forecast)
-            if temp_match:
-                high, low = temp_match.group(1), temp_match.group(2)
-                temp_info.append(f"{high}°F/{low}°F")
+        # Extract temperature and rain probability information
+        temp_rain_info = []
+        for day in result['days_data']:
+            high = day['temp_high'] or "N/A"
+            low = day['temp_low'] or "N/A"
+            rain_prob = day['rain_probability'] or 0
+            temp_rain_info.append(f"{high}°F/{low}°F (Rain: {rain_prob}%)")
         
-        temp_summary = ", ".join(temp_info)
+        temp_rain_summary = ", ".join(temp_rain_info)
         print(f"{i}. {result['city']}: {result['start_date_str']} to {result['end_date_str']} ({result['nights']} nights)")
-        print(f"   Temperatures: {temp_summary}")
+        print(f"   Weather: {temp_rain_summary}")
+        print(f"   Rain percentage: {result['rain_percentage']:.1f}%")
     
     print("\nDo you want to open any of the hotel search URLs? (Enter numbers separated by comma, or 'all')")
     selection = input("Selection: ")
